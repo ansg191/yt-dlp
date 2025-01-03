@@ -26,12 +26,18 @@ pre-release-commit-message = "🚧 v{{version}}"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
+default = ["native-tls"]
+
 tracing = ["dep:tracing"]
+
+native-tls = ["reqwest/native-tls"]
+rustls-tls = ["reqwest/rustls-tls"]
+rustls-tls-native-roots = ["reqwest/rustls-tls-native-roots"]
 
 [dependencies]
 # Runtime and async dependencies
 tokio = { version = "1.41.1", features = ["rt-multi-thread", "macros", "fs", "time", "process"], default-features = false }
-reqwest = { version = "0.12.9", features = ["json", "stream"] }
+reqwest = { version = "0.12.9", default-features = false, features = ["json", "stream", "http2", "charset", "macos-system-configuration"] }
 futures-util = "0.3.31"
 
 # Serialization dependencies

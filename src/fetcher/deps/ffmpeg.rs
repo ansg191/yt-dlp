@@ -7,16 +7,16 @@ use crate::utils::platform::{Architecture, Platform};
 use derive_more::Display;
 use std::path::{Path, PathBuf};
 
-#[cfg(target_os = "windows")]
-const FFMPEG_BUILD_URL: &'static str = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip";
-
-#[cfg(all(target_os = "macos", target_arch = "x86_64"))]
-const FFMPEG_BUILD_URL: &'static str = "https://www.osxexperts.net/ffmpeg71intel.zip";
-#[cfg(all(target_os = "macos", target_arch = "aarch64"))]
-const FFMPEG_BUILD_URL: &'static str = "https://www.osxexperts.net/ffmpeg71arm.zip";
-
-#[cfg(target_os = "linux")]
-const FFMPEG_BUILD_URL: &'static str = "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-{}-static.tar.xz";
+// #[cfg(target_os = "windows")]
+// const FFMPEG_BUILD_URL: &'static str = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip";
+//
+// #[cfg(all(target_os = "macos", target_arch = "x86_64"))]
+// const FFMPEG_BUILD_URL: &'static str = "https://www.osxexperts.net/ffmpeg71intel.zip";
+// #[cfg(all(target_os = "macos", target_arch = "aarch64"))]
+// const FFMPEG_BUILD_URL: &'static str = "https://www.osxexperts.net/ffmpeg71arm.zip";
+//
+// #[cfg(target_os = "linux")]
+// const FFMPEG_BUILD_URL: &'static str = "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-{}-static.tar.xz";
 
 /// The ffmpeg fetcher is responsible for fetching the ffmpeg binary for the current platform and architecture.
 /// It can also extract the binary from the downloaded archive.
